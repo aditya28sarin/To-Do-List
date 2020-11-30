@@ -43,12 +43,12 @@ app.get("/", function(req,res){
 		if(foundItems.length===0){
 			//inserting items in the DB
 			Item.insertMany(defaultItems, function(err){
-				// if(!err){
-					// console.log(err);
-				// }
-				// else{
-					// console.log("Successfully added items to database!");
-				// }
+				if(!err){
+					console.log(err);
+				}
+				else{
+					console.log("Successfully added items to database!");
+				}
 			});
 			
 			res.redirect("/");
@@ -125,11 +125,11 @@ app.post('/delete', function(req,res){
 	
 	if(listName==="Today"){
 	Item.findByIdAndRemove(checkedItem, function(err){
-		// if(!err)
-		// {
-			// console.log("Checked item deleted!");
-			// res.redirect("/");
-		// }
+		if(!err)
+		{
+			console.log("Checked item deleted!");
+			res.redirect("/");
+		}
 	});	
 	}
 	else{
@@ -148,6 +148,6 @@ if (port == null || port == "") {
   port = 3000;
 }
 
-app.listen(port || ,function(){
+app.listen(port , function(){
     console.log('Server is listening at Port 3000..')
 });
