@@ -8,7 +8,7 @@ app.set("view engine", "ejs");
 const _ = require("lodash");
 
 //to connect to the mongodb server
-mongoose.connect("mongodb://localhost:27017/todolistDB", {useNewUrlParser:true});
+mongoose.connect("mongodb+srv://admin-aditya:AdityaSarin@28@cluster0.1xkwf.mongodb.net/todolistDB", {useNewUrlParser:true});
 
 
 const itemSchema = {
